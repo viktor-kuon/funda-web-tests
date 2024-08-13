@@ -13,7 +13,7 @@ public class ProductsAndServicesArticlePage extends BasePage {
     @FindBy(partialLinkText = "Doe de Waardecheck")
     private WebElement doValueCheckButton;
 
-    public ProductsAndServicesArticlePage(WebDriver driver) {
+    public ProductsAndServicesArticlePage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

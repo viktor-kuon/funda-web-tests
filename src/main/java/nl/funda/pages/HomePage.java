@@ -17,7 +17,7 @@ public class HomePage extends BasePage {
     @FindBy(css = "[data-testid=SearchBox-location-suggestion")
     private List<WebElement> locationSuggestions;
 
-    public HomePage(WebDriver driver) {
+    public HomePage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

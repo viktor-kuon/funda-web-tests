@@ -25,7 +25,7 @@ public class RegisterPage extends BasePage {
     @FindBy(css = "[type=submit]")
     private WebElement registerButton;
 
-    public RegisterPage(WebDriver driver) {
+    public RegisterPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

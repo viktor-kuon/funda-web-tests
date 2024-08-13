@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ValueCheckResultsPage extends BasePage {
 
-    public ValueCheckResultsPage(WebDriver driver) {
+    public ValueCheckResultsPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

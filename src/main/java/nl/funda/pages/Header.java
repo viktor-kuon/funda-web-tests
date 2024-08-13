@@ -18,7 +18,7 @@ public class Header extends BasePage {
     @FindBy(xpath = "//button[span[text()='Inloggen']]")
     private WebElement loginButton;
 
-    public Header(WebDriver driver) {
+    public Header(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

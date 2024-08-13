@@ -11,7 +11,7 @@ import static nl.funda.helpers.WebElementUtils.getText;
 
 public class Listing {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
     @FindBy(css = "[data-test-id=street-name-house-number]")
     private WebElement streetAndHouseNumber;
@@ -22,7 +22,7 @@ public class Listing {
     @FindBy(css = "[data-test-id=price-rent]")
     private WebElement rentPrice;
 
-    public Listing(WebElement rootElement, WebDriver driver) {
+    public Listing(final WebElement rootElement, final WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new WebElementDecorator(rootElement), this);
     }

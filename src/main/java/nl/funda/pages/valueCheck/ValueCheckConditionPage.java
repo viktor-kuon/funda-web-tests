@@ -16,7 +16,7 @@ public class ValueCheckConditionPage extends BasePage {
     @FindBy(xpath = "//button[contains(text(),'Volgende')]")
     private WebElement nextButton;
 
-    public ValueCheckConditionPage(WebDriver driver) {
+    public ValueCheckConditionPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

@@ -24,76 +24,71 @@ public class WebElementUtils {
         }
     }
 
-    public static void click(WebElement element) {
+    public static void click(final WebElement element) {
         verifyClickable(element);
         element.click();
     }
 
-    public static void click(List<WebElement> elements, final int index) {
+    public static void click(final List<WebElement> elements, final int index) {
         verifyVisible((elements));
         elements.get(index).click();
     }
 
-    public static void forceClick(WebElement element) {
+    public static void forceClick(final WebElement element) {
         verifyClickable(element);
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].click();", element);
     }
 
-    public static String getText(WebElement element) {
+    public static String getText(final WebElement element) {
         verifyVisible(element);
         return element.getText();
     }
 
-    public static String getText(List<WebElement> elements, final int index) {
+    public static String getText(final List<WebElement> elements, final int index) {
         verifyVisible(elements);
         return elements.get(index).getText();
     }
 
-    public static String getAttributeValue(WebElement element, final String attributeName) {
+    public static String getAttributeValue(final WebElement element, final String attributeName) {
         verifyVisible(element);
         return element.getAttribute(attributeName);
     }
 
-    public static int getSize(List<WebElement> elements) {
+    public static int getSize(final List<WebElement> elements) {
         verifyVisible(elements);
         return elements.size();
     }
 
-    public static void selectByValue(WebElement element, final String value) {
+    public static void selectByValue(final WebElement element, final String value) {
         verifyClickable(element);
         Select dropdown = new Select(element);
         dropdown.selectByValue(value);
     }
 
-    public static void scrollToElement(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-    }
-
-    public static void fillText(WebElement element, final String text) {
+    public static void fillText(final WebElement element, final String text) {
         verifyClickable(element);
         element.clear();
         element.sendKeys(text);
     }
 
-    public static void verifyClickable(WebElement element) {
+    public static void verifyClickable(final WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static void verifyVisible(WebElement element) {
+    public static void verifyVisible(final WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void verifyVisible(List<WebElement> elements) {
+    public static void verifyVisible(final List<WebElement> elements) {
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
-    public static void verifyTextToBePresent(WebElement element, final String text) {
+    public static void verifyTextToBePresent(final WebElement element, final String text) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
     }
 
-    public static void verifyAttributeToBe(WebElement element, final String attributeName, final String attributeValue) {
+    public static void verifyAttributeToBe(final WebElement element, final String attributeName, final String attributeValue) {
         wait.until(ExpectedConditions.attributeContains(element, attributeName, attributeValue));
     }
 }

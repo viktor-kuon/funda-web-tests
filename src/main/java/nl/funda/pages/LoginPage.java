@@ -12,7 +12,7 @@ public class LoginPage extends BasePage {
     @FindBy(partialLinkText = "Maak account aan")
     private WebElement makeAccountButton;
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

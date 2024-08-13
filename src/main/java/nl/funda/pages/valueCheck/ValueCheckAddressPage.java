@@ -23,7 +23,7 @@ public class ValueCheckAddressPage extends BasePage {
     @FindBy(css = "[data-test-id=address-submit]")
     private WebElement addMyHouseButton;
 
-    public ValueCheckAddressPage(WebDriver driver) {
+    public ValueCheckAddressPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

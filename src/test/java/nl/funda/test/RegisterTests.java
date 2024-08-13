@@ -17,6 +17,7 @@ public class RegisterTests extends BaseTest {
                 .clickMakeAccountButton()
                 .registerUser(user);
 
+        // Complete registration
         user.clearPassword();
     }
 }

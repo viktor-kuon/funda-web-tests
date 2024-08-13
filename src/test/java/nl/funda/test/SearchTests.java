@@ -37,10 +37,10 @@ public class SearchTests extends BaseTest {
     }
 
     @Test
-    public void sortRentListingsByRentPriceAsc() throws UnsupportedEncodingException {
+    public void sortRentListingsByRentPriceAsc() {
         ListingsPage listingsPage = new ListingsPage(driver);
 
-        final Boolean sortedByRentPriceAsc = listingsPage.open(RENT_TYPE, "Amsterdam")
+        final Boolean sortedByRentPriceAsc = listingsPage.open(RENT_TYPE)
                 .onCookiesPopup().acceptAllCookies(ListingsPage.class)
                 .applySorting(SortingOption.PRICE_LOW_TO_HIGH)
                 .resultsSortedByRentPriceAsc();

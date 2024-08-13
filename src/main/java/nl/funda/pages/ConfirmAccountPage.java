@@ -5,7 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ConfirmAccountPage extends BasePage {
 
-    public ConfirmAccountPage(WebDriver driver) {
+    public ConfirmAccountPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

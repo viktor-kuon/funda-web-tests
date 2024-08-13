@@ -12,7 +12,7 @@ public class ContactEmailPage extends BasePage {
     @FindBy(className = "object-header__title")
     private WebElement title;
 
-    public ContactEmailPage(WebDriver driver) {
+    public ContactEmailPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

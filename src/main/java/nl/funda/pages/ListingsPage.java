@@ -8,9 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,13 +29,13 @@ public class ListingsPage extends BasePage {
     @FindBy(css = LISTING_CSS)
     private List<WebElement> listings;
 
-    public ListingsPage(WebDriver driver) {
+    public ListingsPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public ListingsPage open(String pageType, String... selectedAreas) throws UnsupportedEncodingException {
-        String url = buildSearchUrl(pageType, selectedAreas);
+    public ListingsPage open(final String pageType) {
+        String url = String.format("%szoeken/%s", BASE_URL, pageType);
         driver.get(url);
         return this;
     }
@@ -64,7 +61,7 @@ public class ListingsPage extends BasePage {
                 .collect(Collectors.toList());
     }
 
-    public Boolean listingsContainCorrectLocations(String... locations) {
+    public Boolean listingsContainCorrectLocations(final String... locations) {
         for (Listing item : getListings()) {
             String postalCodeAndCity = item.getPostalCodeAndCity();
             boolean containsExpectedLocation = false;
@@ -128,13 +125,7 @@ public class ListingsPage extends BasePage {
         return true;
     }
 
-    private String buildSearchUrl(String pageType, String... selectedAreas) throws UnsupportedEncodingException {
-        String encodedAreas = URLEncoder.encode(String.format("[%s]", String.join(",", selectedAreas)), StandardCharsets.UTF_8.toString());
-
-        return String.format("%szoeken/%s?selected_area=%s", BASE_URL, pageType, encodedAreas);
-    }
-
-    private int getNumericPrice(String priceString) {
+    private int getNumericPrice(final String priceString) {
         String priceNumeric = priceString.replaceAll("\\D", "");
         return Integer.parseInt(priceNumeric);
     }

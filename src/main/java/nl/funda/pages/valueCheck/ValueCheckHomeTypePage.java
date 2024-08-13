@@ -16,7 +16,7 @@ public class ValueCheckHomeTypePage extends BasePage {
     @FindBy(xpath = "//button[contains(text(),'Volgende')]")
     private WebElement nextButton;
 
-    public ValueCheckHomeTypePage(WebDriver driver) {
+    public ValueCheckHomeTypePage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

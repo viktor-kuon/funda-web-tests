@@ -8,7 +8,7 @@ public enum SortingOption {
 
     private final String value;
 
-    SortingOption(String value) {
+    SortingOption(final String value) {
         this.value = value;
     }
 

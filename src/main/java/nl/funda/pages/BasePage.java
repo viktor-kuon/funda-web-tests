@@ -8,7 +8,7 @@ public abstract class BasePage {
 
     protected WebDriver driver;
 
-    public BasePage(WebDriver driver) {
+    public BasePage(final WebDriver driver) {
         this.driver = driver;
     }
 

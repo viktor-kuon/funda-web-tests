@@ -12,12 +12,12 @@ public class CookiesPopup extends BasePage {
     @FindBy(id = "didomi-notice-agree-button")
     private WebElement acceptAllCookiesButton;
 
-    public CookiesPopup(WebDriver driver) {
+    public CookiesPopup(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public <T extends BasePage> T acceptAllCookies(Class<T> pageClass) {
+    public <T extends BasePage> T acceptAllCookies(final Class<T> pageClass) {
         click(acceptAllCookiesButton);
         return PageFactory.initElements(driver, pageClass);
     }

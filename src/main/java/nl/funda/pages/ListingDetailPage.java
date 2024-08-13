@@ -17,7 +17,7 @@ public class ListingDetailPage extends BasePage{
     @FindBy(partialLinkText = "Stuur e-mail")
     private WebElement sendEmailButton;
 
-    public ListingDetailPage(WebDriver driver) {
+    public ListingDetailPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
