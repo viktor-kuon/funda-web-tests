@@ -1,0 +1,33 @@
+package nl.funda.pages.valueCheck;
+
+import nl.funda.pages.BasePage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import static nl.funda.helpers.WebElementUtils.click;
+
+public class ValueCheckHomeTypePage extends BasePage {
+
+    @FindBy(css = "[for=buildingType-apartment]")
+    private WebElement appartmentTypeRadioButton;
+
+    @FindBy(xpath = "//button[contains(text(),'Volgende')]")
+    private WebElement nextButton;
+
+    public ValueCheckHomeTypePage(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
+
+    public ValueCheckHomeTypePage clickAppartmentRadioButton() {
+        click(appartmentTypeRadioButton);
+        return this;
+    }
+
+    public ValueCheckFeaturesPage clickNextButton() {
+        click(nextButton);
+        return new ValueCheckFeaturesPage(driver);
+    }
+}
