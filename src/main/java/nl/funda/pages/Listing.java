@@ -1,7 +1,6 @@
-package nl.funda.elements;
+package nl.funda.pages;
 
 import nl.funda.helpers.WebElementDecorator;
-import nl.funda.pages.ListingDetailPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

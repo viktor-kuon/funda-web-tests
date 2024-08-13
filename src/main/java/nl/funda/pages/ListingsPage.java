@@ -1,6 +1,5 @@
 package nl.funda.pages;
 
-import nl.funda.elements.Listing;
 import nl.funda.helpers.SortingOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
